@@ -47,6 +47,13 @@ def pytest_addoption(parser):
     parser.addoption("--runslow", action="store_true", default=False, help="run slow tests")
 
 
+# 添加报告头
+def pytest_report_header(config):
+    opt = config.getoption('cmdopt')
+    if opt != "type1" and opt != "type2":
+        return ["error:cmdopt must be type1 or type2", "did you know that?"]
+
+
 # for test_cmd_options.py
 # pytest test_cmd_options.py --cmdopt=type1
 # pytest test_cmd_options.py --cmdopt=type2

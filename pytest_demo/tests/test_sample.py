@@ -26,7 +26,7 @@ $pytest -x --pdb # drop to PDB on first failure, then end test session
 To set a breakpoint in your code use the native Python import pdb;pdb.set_trace() call in your code and
 pytest automatically disables its output capture for that test:
 
-查看测试最慢的十个次测试:
+查看测试最慢的十个个测试用例:
 pytest --durations=10
 
 生成Jenkins认识的JunitXML格式
